@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sendit - Easy file Transfer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="upload-container">
+        <div class="drop-zone">
+            <div class="icon-container">
+                <img src="/public/img/upload.png" class="right" draggable="false">
+                <img src="/public/img/upload.png" class="left" draggable="false">
+                
+            </div>
+            <input type="file" id="fileInput"> <!--drop karke file inout ko handle karne ka system hai ye dont worry about its position as it is going to be called when file is dragged properly and yes ham isko hide kar denge and will only get revoked when file is dragged or the browse tag is clicked-->
+            <div class="title">Drop your files here or,
+                <span class="browseBtn">browse</span>
+            </div>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
