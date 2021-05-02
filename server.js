@@ -14,7 +14,7 @@ connectDB();
 const corsOptions = {
     origin:['http://localhost:3000','http://localhost:5500','http://localhost:3300']
 }
-
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.set('views', path.join(__dirname, '/views'));
