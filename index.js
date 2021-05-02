@@ -2,8 +2,8 @@ const dropZone = document.querySelector('.drop-zone');
 const browseBtn = document.querySelector('.browseBtn');
 const fileInput = document.querySelector('#fileInput');
 
-const host = "https://inshare.herokuapp.com/";
-const uploadURL= `${host}api/files`;
+
+const uploadURL= `https://sendit-ft.herokuapp.com/api/files`;
 
 const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
