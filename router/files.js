@@ -46,6 +46,7 @@ router.post('/',(req,res)=>{
 //see tutorial for nodemailer https://www.youtube.com/watch?v=nF9g1825mwk&t=165s 
 
 router.post('/send', (req, res) => {
+    console.log("sender called");
     const {uuid,emailTo,emailFrom} = req.body;
     const output = `
       <p>You have a new contact request</p>
@@ -83,7 +84,7 @@ router.post('/send', (req, res) => {
         text: 'Hello world?', // plain text body
         html: require('../services/emailTemplate')({
             emailFrom, 
-            downloadLink: `${process.env.APP_BASE_URL}files/${req.body.uuid}?source=email` ,
+            downloadLink: `${process.env.APP_BASE_URL}/files/${req.body.uuid}?source=email` ,
             size: parseInt(file.size/1000000) + ' MB',
             expires: '24 hours'
         })

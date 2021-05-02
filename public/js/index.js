@@ -1,12 +1,40 @@
 const dropZone = document.querySelector('.drop-zone');
-const browseBtn = document.querySelector('.browseBtn');
+// const browseBtn = document.querySelector('.browseBtn');
 const fileInput = document.querySelector('#fileInput');
+const fileURL = document.querySelector("#fileURL");
+const browseBtn = document.querySelector('#browseBtn');
+const sendbtn = document.querySelector('.send-btn-container');
+const copylink = document.querySelector('#copyURLBtn');
 
-const host = "https://inshare.herokuapp.com/";
-const uploadURL= `${host}api/files`;
+const uploadURL= `http://sendit-eft.herokuapp.com/api/files`;
 
 const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
+copylink.addEventListener('click',()=>{
+  fileURL.select();
+  document.execCommand("copy");
+
+});
+
+sendbtn.addEventListener("click",()=>{
+  fetch("http://sendit-eft.herokuapp.com/api/files/send", {
+      
+    // Adding method type
+    method: "POST",
+      
+    // Adding body or contents to send
+    body: JSON.stringify({
+        uuid:(fileURL.value).split("/").splice(-1,1)[0],
+        emailTo: emailForm.elements["to-email"].value,
+        emailForm:emailForm.elements["from-email"].value
+    }),
+      
+    // Adding headers to the request
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+});
 
 dropZone.addEventListener("drop", (e) => {
     e.preventDefault();
@@ -25,7 +53,16 @@ dropZone.addEventListener("drop", (e) => {
     dropZone.classList.remove("dragged");
 });
 
-  
+browseBtn.addEventListener("click", ()=>{
+  fileInput.click();
+});
+
+fileInput.addEventListener("change",()=>{
+    const file=fileInput.files[0];
+    console.log(file);
+    uploadFile();
+});
+
 dropZone.addEventListener("dragover", (e) => {
     e.preventDefault();
     dropZone.classList.add("dragged");
@@ -40,9 +77,16 @@ const uploadFile = ()=>{
 
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange=()=>{
-        console.log(xhr.readyState);
+        // console.log(xhr.readyState);
+        if(xhr.readyState === XMLHttpRequest.DONE)
+        {
+          var obj = JSON.parse( xhr.response ); //the response link was in json format so we are parsing it so that it can be used like a nomral obj
+          console.log(obj.file);
+          fileURL.value=obj.file;
+        }
     };
 
     xhr.open("POST",uploadURL);
     xhr.send(formData);
 };
+
