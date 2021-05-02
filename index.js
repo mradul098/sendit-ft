@@ -3,7 +3,7 @@ const browseBtn = document.querySelector('.browseBtn');
 const fileInput = document.querySelector('#fileInput');
 
 
-const uploadURL= `https://sendit-ft.herokuapp.com/api/files`;
+const uploadURL= `https://sendit-eft.herokuapp.com/api/files`;
 
 const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
