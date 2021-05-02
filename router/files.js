@@ -84,7 +84,7 @@ router.post('/send', (req, res) => {
         text: 'Hello world?', // plain text body
         html: require('../services/emailTemplate')({
             emailFrom, 
-            downloadLink: `${process.env.APP_BASE_URL}/files/${req.body.uuid}?source=email` ,
+            downloadLink: `${process.env.APP_BASE_URL}files/${req.body.uuid}?source=email` ,
             size: parseInt(file.size/1000000) + ' MB',
             expires: '24 hours'
         })
