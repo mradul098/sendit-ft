@@ -6,7 +6,7 @@ const browseBtn = document.querySelector('#browseBtn');
 const sendbtn = document.querySelector('.send-btn-container');
 const copylink = document.querySelector('#copyURLBtn');
 
-const uploadURL= `http://sendit-eft.herokuapp.com/api/files`;
+const uploadURL= `https://sendit-eft.herokuapp.com/api/files`;
 
 const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
@@ -17,7 +17,7 @@ copylink.addEventListener('click',()=>{
 });
 
 sendbtn.addEventListener("click",()=>{
-  fetch("http://sendit-eft.herokuapp.com/api/files/send", {
+  fetch("https://sendit-eft.herokuapp.com/api/files/send", {
       
     // Adding method type
     method: "POST",
