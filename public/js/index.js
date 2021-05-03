@@ -6,7 +6,7 @@ const browseBtn = document.querySelector('#browseBtn');
 const sendbtn = document.querySelector('.send-btn-container');
 const copylink = document.querySelector('#copyURLBtn');
 
-const uploadURL= `https://sendit-eft.herokuapp.com/api/files`;
+const uploadURL= `https://sendit-eft.herokuapp.com/api/files/send`;
 
 const maxAllowedSize = 100 * 1024 * 1024; //100mb
 
