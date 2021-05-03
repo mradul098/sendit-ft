@@ -12,7 +12,7 @@ connectDB();
 
 //cors for cors block isse 
 const corsOptions = {
-    origin:['http://localhost:3000','http://localhost:5500','http://localhost:3300']
+    origin:['http://localhost:3000','http://localhost:5500','https://sendit-eft.herokuapp.com']
 }
 app.use(cors(corsOptions));
 app.use(express.json());
