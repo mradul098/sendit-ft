@@ -48,7 +48,11 @@
     width: var(--container-width);
     min-height: 200px;
     border: 2px solid var(--border-color);
+<<<<<<< HEAD
     border-radius: 0px;
+=======
+    border-radius: 10px;
+>>>>>>> d4cea73496512e39225e4cddd78646f92191f004
     margin: 30px;
     transition: 0.2s all ease-in;
   }
@@ -59,9 +63,13 @@
     border-color: #0288d1;
   }
   
+<<<<<<< HEAD
   .drop-zone input {
     /*display:none*/;
   }
+=======
+ 
+>>>>>>> d4cea73496512e39225e4cddd78646f92191f004
   
   .icon-container {
     position: relative;
@@ -113,7 +121,11 @@
     margin-bottom: 25px;
     position: relative;
     /*display:none*/;
+<<<<<<< HEAD
   }
+=======
+  
+>>>>>>> d4cea73496512e39225e4cddd78646f92191f004
   
   .progress-container .inner-container {
     margin: 10px 15px;
@@ -148,7 +160,11 @@
     transform: scaleX(0);
     transform-origin: left;
   }
+<<<<<<< HEAD
    */
+=======
+   
+>>>>>>> d4cea73496512e39225e4cddd78646f92191f004
   /* sharing container style */
   .sharing-container {
     margin-bottom: 25px;
@@ -273,9 +289,13 @@
     :root {
       --container-width: 320px;
     }
+<<<<<<< HEAD
     .image-vector {
       /*display:none*/;
     }
+=======
+    
+>>>>>>> d4cea73496512e39225e4cddd78646f92191f004
     .email-container .filed {
       flex-direction: column;
     }

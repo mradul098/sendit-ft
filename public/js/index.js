@@ -17,7 +17,11 @@ copylink.addEventListener('click',()=>{
 });
 
 sendbtn.addEventListener("click",()=>{
+<<<<<<< HEAD:public/js/index.js
   fetch("http://localhost:3000/api/files/send", {
+=======
+  fetch("https://sendit-eft.herokuapp.com/api/files/send", {
+>>>>>>> d4cea73496512e39225e4cddd78646f92191f004:index.js
       
     // Adding method type
     method: "POST",
@@ -89,4 +93,7 @@ const uploadFile = ()=>{
     xhr.open("POST",uploadURL);
     xhr.send(formData);
 };
+<<<<<<< HEAD:public/js/index.js
 
+=======
+>>>>>>> d4cea73496512e39225e4cddd78646f92191f004:index.js
