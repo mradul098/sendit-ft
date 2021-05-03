@@ -17,7 +17,7 @@ copylink.addEventListener('click',()=>{
 });
 
 sendbtn.addEventListener("click",()=>{
-  fetch("http://localhost:3000/api/files/send", {
+  fetch("https://sendit-eft.herokuapp.com/api/files", {
       
     // Adding method type
     method: "POST",
