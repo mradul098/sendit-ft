@@ -46,6 +46,7 @@ router.post('/',(req,res)=>{
 //see tutorial for nodemailer https://www.youtube.com/watch?v=nF9g1825mwk&t=165s 
 
 router.post('/send', (req, res) => {
+    console.log("sender called");
     const {uuid,emailTo,emailFrom} = req.body;
     const output = `
       <p>You have a new contact request</p>
